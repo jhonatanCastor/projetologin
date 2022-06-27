@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+var hours = 28800000;
+=======
+>>>>>>> main
 
 
 
@@ -27,6 +31,12 @@ const hendleAddTask = () =>{
     const taskContent = document.createElement('p');
 
     taskContent.innerText = inputElement.value;
+<<<<<<< HEAD
+    setTimeout(() => {
+        taskContent.classList.add("taskYellow")
+        updateLocalStorage();
+    }, hours);
+=======
     // taskContent.classList.add("taskYellow")
   
     setTimeout(() => {
@@ -38,6 +48,7 @@ const hendleAddTask = () =>{
 
     
     
+>>>>>>> main
 
     
 
@@ -117,11 +128,19 @@ const updateLocalStorage = () =>{
         const content = task.firstChild;
         const isCompleted = content.classList.contains('completed');
         const isYellow = content.classList.contains("taskYellow");
+<<<<<<< HEAD
+    
+
+
+
+        return {description: content.innerText, isCompleted: isCompleted, isYellow: isYellow};
+=======
  
 
 
 
         return {description: content.innerText, isCompleted: isCompleted, colorY: isYellow };
+>>>>>>> main
 
 
     });
@@ -145,6 +164,13 @@ const refreshTasksUsingLocalStorage = () =>{
     
         const taskContent = document.createElement('p');
         taskContent.innerText = task.description;
+<<<<<<< HEAD
+        
+        if(task.isYellow){
+            taskContent.classList.add("taskYellow")
+        }
+=======
+>>>>>>> main
 
         if (task.isCompleted){
             taskContent.classList.add("completed")
@@ -155,6 +181,10 @@ const refreshTasksUsingLocalStorage = () =>{
             taskContent.classList.add("taskYellow")
         }
 
+<<<<<<< HEAD
+        // console.log(isPassed)
+
+=======
         
 
         
@@ -164,6 +194,7 @@ const refreshTasksUsingLocalStorage = () =>{
 
 
         
+>>>>>>> main
        
     
         taskContent.addEventListener('click', () => handleClick(taskContent))
