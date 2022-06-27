@@ -4,19 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./perfil.css">
+    <link rel="stylesheet" href="./lista.css">
     <title>Document</title>
 </head>
-<body>
-    <h1>Fatima</h1>
+ <body> 
+
+    <div class="photoContainer">
+      <img  src="../img/fatima.jpg"style="border-radius: 100%; margin: 5px;" width="auto" height="70%" >
+       <duv class="dados">
+        <h1>Fatima</h1>
+       </duv>
+    </div>
 
 
-    <form>
-        <div>
-          <br>
-           <button class="button"><a href="../home.html">voltar</a></button>
-          <br>
-       </div>
-      </form>
-</body>
+     <div class="containerMain">
+      <div class="container">
+        <div class="new-task-container">
+            <input 
+             type="text" 
+             class="new-task-input"
+             placeholder="Notas diarias"
+            />
+          <button class="new-task-button">Enter</button>
+        </div>
+
+       
+
+
+        <div class="tasks-container"></div>
+         <!-- <div class="taskk-item">
+            <p>teste</p>
+            <i></i>
+        </div> -->
+
+
+
+    </div>
+     <div>
+      <button class="buttonListe"><a href="../home.html">voltar</a></button>
+     </div>
+     </div>
+ 
+    <script src="https://kit.fontawesome.com/2cf69bcf67.js" 
+      crossorigin="anonymous">
+    </script>
+    <script src="./scripts.js"></script>
+ </body>
 </html>
