@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 var hours = 28800000;
+=======
+>>>>>>> main
 
-var isPassed = false;
+
+
 
 
 const inputElement = document.querySelector('.new-task-input');
@@ -14,6 +18,7 @@ const validateInput = () => inputElement.value.trim().length > 0;
 
 const hendleAddTask = () =>{
     const inputIsValid = validateInput();
+    
 
     if (! inputIsValid){
         return inputElement.classList.add('error');
@@ -24,11 +29,26 @@ const hendleAddTask = () =>{
     taskItemConteiner.classList.add('task-item');
 
     const taskContent = document.createElement('p');
+
     taskContent.innerText = inputElement.value;
+<<<<<<< HEAD
     setTimeout(() => {
         taskContent.classList.add("taskYellow")
         updateLocalStorage();
     }, hours);
+=======
+    // taskContent.classList.add("taskYellow")
+  
+    setTimeout(() => {
+      
+        taskContent.classList.add("taskYellow")
+        updateLocalStorage();
+        
+    }, 28800000);
+
+    
+    
+>>>>>>> main
 
     
 
@@ -102,18 +122,25 @@ const hendleInputChange = () => {
 
 const updateLocalStorage = () =>{
     const tasks = tasksContainer.childNodes;
-
-   
+    
 
     const localStorageTasks = [...tasks].map(task =>{
         const content = task.firstChild;
         const isCompleted = content.classList.contains('completed');
         const isYellow = content.classList.contains("taskYellow");
+<<<<<<< HEAD
     
 
 
 
         return {description: content.innerText, isCompleted: isCompleted, isYellow: isYellow};
+=======
+ 
+
+
+
+        return {description: content.innerText, isCompleted: isCompleted, colorY: isYellow };
+>>>>>>> main
 
 
     });
@@ -137,19 +164,37 @@ const refreshTasksUsingLocalStorage = () =>{
     
         const taskContent = document.createElement('p');
         taskContent.innerText = task.description;
+<<<<<<< HEAD
         
         if(task.isYellow){
             taskContent.classList.add("taskYellow")
         }
+=======
+>>>>>>> main
 
         if (task.isCompleted){
             taskContent.classList.add("completed")
-
         }
+
+        if(task.colorY){
+            console.log("É amarelo")
+            taskContent.classList.add("taskYellow")
+        }
+
+<<<<<<< HEAD
+        // console.log(isPassed)
+
+=======
+        
+
+        
 
 
         // console.log(isPassed)
 
+
+        
+>>>>>>> main
        
     
         taskContent.addEventListener('click', () => handleClick(taskContent))
@@ -182,4 +227,4 @@ addTaskButton.addEventListener('click', () => hendleAddTask());
 
 inputElement.addEventListener('change', () => hendleInputChange());
 
-
+console.log("test");
