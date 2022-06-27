@@ -1,6 +1,4 @@
-function load(){
-    
-}
+var hours = 28800000;
 
 var isPassed = false;
 
@@ -27,7 +25,10 @@ const hendleAddTask = () =>{
 
     const taskContent = document.createElement('p');
     taskContent.innerText = inputElement.value;
-    taskContent.classList.add("pTaskContent")
+    setTimeout(() => {
+        taskContent.classList.add("taskYellow")
+        updateLocalStorage();
+    }, hours);
 
     
 
@@ -106,13 +107,13 @@ const updateLocalStorage = () =>{
 
     const localStorageTasks = [...tasks].map(task =>{
         const content = task.firstChild;
-        const isCompleted = content.classList.contains('completed')
+        const isCompleted = content.classList.contains('completed');
         const isYellow = content.classList.contains("taskYellow");
-        const isBlack = content.classList.contains("taskBlack")
+    
 
 
 
-        return {description: content.innerText, isCompleted: isCompleted, color: ["taskBlack", "taskYellow"]};
+        return {description: content.innerText, isCompleted: isCompleted, isYellow: isYellow};
 
 
     });
@@ -138,7 +139,7 @@ const refreshTasksUsingLocalStorage = () =>{
         taskContent.innerText = task.description;
         
         if(task.isYellow){
-
+            taskContent.classList.add("taskYellow")
         }
 
         if (task.isCompleted){
@@ -147,18 +148,8 @@ const refreshTasksUsingLocalStorage = () =>{
         }
 
 
-
-        setTimeout(() => {
-            taskContent.style.color = task.color[1]
-        }, 2000);
-        
-        if(task.color[1])
-
-
         // console.log(isPassed)
 
-
-        taskContent.classList.add("pTaskContent")
        
     
         taskContent.addEventListener('click', () => handleClick(taskContent))
