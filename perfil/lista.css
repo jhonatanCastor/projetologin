@@ -12,24 +12,41 @@ body {
         rgba(65, 184, 131, 1) 0%, 
         rgba(0, 212, 255, 1)100%
         );
-        display: flex;
-        align-items: center;
-        justify-content: center;
+       display: flex;
+       flex-direction: row;
+       gap: 40px;
         
 }
 
+.containerMain{
+    
+    align-items: center;
+    justify-content: center;
+  
+}
 
 .photo{
-    
+    margin: 10px;
+    background: linear-gradient(
+        90deg, 
+        rgb(186, 186, 38) 0%, 
+        rgb(36, 35, 5)100%
+        );
+    border: 3px solid black;
+    border-radius: 50px;
+    height: 500px;
+    width: 400px;
+    text-align: center;
+    justify-content: center;
 }
 
 .container{
     border: 2px solid #fff;
     padding: 30px 40px;
     width: 40%;
-    min-width: 500px;
-    margin-top: 400px;
-    margin-bottom: 300px;
+    min-width: 900px;
+    margin-top: 50px;
+ 
   
 }
 

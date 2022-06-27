@@ -1,4 +1,5 @@
-.button{
+.buttonHome{
+  
     font-size: 30px;
     font-family: 'Times New Roman', Times, serif;
     width: 160px;
@@ -6,8 +7,14 @@
     margin: 17px;
     border-radius: 7px;
     text-align: center;
-    background-color: var(--component-color);
+    background-color: red;
+   
 
     
 
 }
+
+.divButton{
+
+}
+
