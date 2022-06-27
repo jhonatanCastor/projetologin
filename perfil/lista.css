@@ -18,13 +18,21 @@ body {
         
 }
 
+
+.dirce{
+    
+}
+
 .container{
     border: 2px solid #fff;
     padding: 30px 40px;
     width: 40%;
     min-width: 500px;
+    margin-top: 400px;
+    margin-bottom: 300px;
   
 }
+
 
 .new-task-container{
     background-color: #fff;
@@ -79,6 +87,7 @@ body {
     align-items: center;
     margin-bottom: 6px;
     margin-top: 6px;
+    overflow-y: auto ;
 }
 
 .task-item i {
@@ -87,6 +96,11 @@ body {
     padding: 12px;
     border-radius: 5px;
     cursor: pointer;
+    
+}
+
+.pTaskContent{
+    color: blue;
 }
 
 
@@ -108,5 +122,12 @@ body {
     text-decoration: line-through;
 }
 
+
+.taskYellow{
+    color: yellow;
+}
+.taskBlack{
+    color: black;
+}
 
 

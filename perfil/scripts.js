@@ -1,3 +1,10 @@
+function load(){
+    
+}
+
+var isPassed = false;
+
+
 const inputElement = document.querySelector('.new-task-input');
 const addTaskButton = document.querySelector('.new-task-button');
 
@@ -20,6 +27,9 @@ const hendleAddTask = () =>{
 
     const taskContent = document.createElement('p');
     taskContent.innerText = inputElement.value;
+    taskContent.classList.add("pTaskContent")
+
+    
 
     taskContent.addEventListener('click', () => handleClick(taskContent))
 
@@ -94,36 +104,62 @@ const updateLocalStorage = () =>{
 
    
 
-    const localStorageTasks = [... tasks].map(task =>{
+    const localStorageTasks = [...tasks].map(task =>{
         const content = task.firstChild;
         const isCompleted = content.classList.contains('completed')
+        const isYellow = content.classList.contains("taskYellow");
+        const isBlack = content.classList.contains("taskBlack")
 
-        return {description: content.innerText, isCompleted: isCompleted};
+
+
+        return {description: content.innerText, isCompleted: isCompleted, color: ["taskBlack", "taskYellow"]};
+
+
     });
 
 
+    console.log(localStorageTasks)
     localStorage.setItem('tasks', JSON.stringify(localStorageTasks));
+
 
 };
 
+const refreshTasksUsingLocalStorage = () =>{
+    const tasksFromLocalStorage = JSON.parse(localStorage.getItem("tasks"));
 
-const refreshTasksUsingLocalStorege = () =>{
-    const tasksFromLocalStorege = JSON.parse(localStorage.getItem('tasks'));
+    console.log(tasksFromLocalStorage)
 
-    for (const task of tasksFromLocalStorege){
+    for(const task of tasksFromLocalStorage){
+
         const taskItemConteiner = document.createElement('div');
         taskItemConteiner.classList.add('task-item');
     
         const taskContent = document.createElement('p');
-        taskContent.innerText = tesk.description;
+        taskContent.innerText = task.description;
+        
+        if(task.isYellow){
+
+        }
 
         if (task.isCompleted){
-            taskContent.classList.add("completed");
+            taskContent.classList.add("completed")
 
         }
 
 
 
+        setTimeout(() => {
+            taskContent.style.color = task.color[1]
+        }, 2000);
+        
+        if(task.color[1])
+
+
+        // console.log(isPassed)
+
+
+        taskContent.classList.add("pTaskContent")
+       
     
         taskContent.addEventListener('click', () => handleClick(taskContent))
     
@@ -145,24 +181,14 @@ const refreshTasksUsingLocalStorege = () =>{
 
     }
 
-};
+}
 
 
+refreshTasksUsingLocalStorage();
 
-
-
-
-
-refreshTasksUsingLocalStorege();
 
 addTaskButton.addEventListener('click', () => hendleAddTask());
 
 inputElement.addEventListener('change', () => hendleInputChange());
-
-
-
-
-console.log('teste')
-
 
 
