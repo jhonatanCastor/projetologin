@@ -13,13 +13,25 @@ body {
         rgba(0, 212, 255, 1)100%
         );
         display: flex;
-        align-items: center;
-        justify-content: center;
+        flex-direction: row;
         
 }
 
+.containerMain{
+    display: flex;
+        align-items: center;
+        justify-content: center;
+}
 
 .photo{
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    height: 300px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+
     
 }
 
@@ -99,9 +111,9 @@ body {
     
 }
 
-.pTaskContent{
+/* .pTaskContent{
     color: blue;
-}
+} */
 
 
 
