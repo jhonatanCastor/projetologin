@@ -1,28 +1,15 @@
-<<<<<<< HEAD
-var hours = 28800000;
-=======
->>>>>>> main
-
-
-
-
-
 const inputElement = document.querySelector('.new-task-input');
 const addTaskButton = document.querySelector('.new-task-button');
 
 const tasksContainer = document.querySelector('.tasks-container')
-
-
 
 const validateInput = () => inputElement.value.trim().length > 0;
 
 const hendleAddTask = () =>{
     const inputIsValid = validateInput();
     
-
     if (! inputIsValid){
         return inputElement.classList.add('error');
-
     }
 
     const taskItemConteiner = document.createElement('div');
@@ -31,59 +18,33 @@ const hendleAddTask = () =>{
     const taskContent = document.createElement('p');
 
     taskContent.innerText = inputElement.value;
-<<<<<<< HEAD
-    setTimeout(() => {
-        taskContent.classList.add("taskYellow")
-        updateLocalStorage();
-    }, hours);
-=======
     // taskContent.classList.add("taskYellow")
   
     setTimeout(() => {
-      
         taskContent.classList.add("taskYellow")
         updateLocalStorage();
         
     }, 28800000);
 
-    
-    
->>>>>>> main
-
-    
-
     taskContent.addEventListener('click', () => handleClick(taskContent))
-
 
     const deleteItem = document.createElement('i');
     deleteItem.classList.add('far');
     deleteItem.classList.add('fa-trash-alt');
-
-
     deleteItem.addEventListener('click', () =>
-     handleDeleteClick(taskItemConteiner,taskContent)
+      handleDeleteClick(taskItemConteiner,taskContent)
     );
     
-
     taskItemConteiner.appendChild(taskContent);
     taskItemConteiner.appendChild(deleteItem);
-
     tasksContainer.appendChild(taskItemConteiner);
-
     inputElement.value = "";
 
-
     updateLocalStorage();
-
-
-
 };
-
 
 const handleClick = (taskContent) =>{
     const tasks = tasksContainer.childNodes;
-    
-
     for (const task of tasks){
         const currentTaskIsBeingClicked = task.firstChild.isSameNode(taskContent)
 
@@ -93,8 +54,6 @@ const handleClick = (taskContent) =>{
     }
     updateLocalStorage();
 };
-
-
 
 const handleDeleteClick = (taskItemConteiner,taskContent) =>{
     const tasks = tasksContainer.childNodes;
@@ -109,8 +68,6 @@ const handleDeleteClick = (taskItemConteiner,taskContent) =>{
     updateLocalStorage();
 };
 
-
-
 const hendleInputChange = () => {
     const inputIsValid = validateInput();
 
@@ -118,7 +75,6 @@ const hendleInputChange = () => {
         return inputElement.classList.remove("error");
     }
 };
-
 
 const updateLocalStorage = () =>{
     const tasks = tasksContainer.childNodes;
@@ -128,28 +84,12 @@ const updateLocalStorage = () =>{
         const content = task.firstChild;
         const isCompleted = content.classList.contains('completed');
         const isYellow = content.classList.contains("taskYellow");
-<<<<<<< HEAD
-    
-
-
-
-        return {description: content.innerText, isCompleted: isCompleted, isYellow: isYellow};
-=======
- 
-
-
 
         return {description: content.innerText, isCompleted: isCompleted, colorY: isYellow };
->>>>>>> main
-
-
     });
-
 
     console.log(localStorageTasks)
     localStorage.setItem('tasks', JSON.stringify(localStorageTasks));
-
-
 };
 
 const refreshTasksUsingLocalStorage = () =>{
@@ -164,13 +104,6 @@ const refreshTasksUsingLocalStorage = () =>{
     
         const taskContent = document.createElement('p');
         taskContent.innerText = task.description;
-<<<<<<< HEAD
-        
-        if(task.isYellow){
-            taskContent.classList.add("taskYellow")
-        }
-=======
->>>>>>> main
 
         if (task.isCompleted){
             taskContent.classList.add("completed")
@@ -181,35 +114,18 @@ const refreshTasksUsingLocalStorage = () =>{
             taskContent.classList.add("taskYellow")
         }
 
-<<<<<<< HEAD
         // console.log(isPassed)
 
-=======
-        
-
-        
-
-
-        // console.log(isPassed)
-
-
-        
->>>>>>> main
-       
-    
         taskContent.addEventListener('click', () => handleClick(taskContent))
-    
     
         const deleteItem = document.createElement('i');
         deleteItem.classList.add('far');
         deleteItem.classList.add('fa-trash-alt');
     
-    
         deleteItem.addEventListener('click', () =>
          handleDeleteClick(taskItemConteiner,taskContent)
         );
         
-    
         taskItemConteiner.appendChild(taskContent);
         taskItemConteiner.appendChild(deleteItem);
     
@@ -218,7 +134,6 @@ const refreshTasksUsingLocalStorage = () =>{
     }
 
 }
-
 
 refreshTasksUsingLocalStorage();
 
