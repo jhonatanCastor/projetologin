@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  login-db:
+    image: mysql
+    container_name: login_db_mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_USER=mmtec
+      - MYSQL_PASSWORD=E!ypXlg^ntgb
+      - MYSQL_DATABASE=login_db
+      - MYSQL_ROOT_PASSWORD=E!ypXlg^ntgb
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      login-db:
+        aliases: 
+          - login-db-mysql
+
+volumes: 
+  mysql_data:
+    driver: local
+
+networks:
+  login-db:
+    external: true

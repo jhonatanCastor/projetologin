@@ -1,0 +1,26 @@
+.buttonHome{
+  
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    width: 160px;
+    height: 60px;
+    margin: 17px;
+    border-radius: 7px;
+    text-align: center;
+    background-color: red;
+   
+
+    
+
+}
+
+.perfilImg{
+    height: 300px;
+    width: 200px;
+    background-image: url("/CSS/img/dirce.jpg");
+    background-color: red;
+    background-size: 100%;
+    background-repeat: no-repeat;
+   
+}
+
